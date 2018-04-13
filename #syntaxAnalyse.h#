@@ -1,0 +1,6 @@
+typedef struct DefNode
+{
+	char *top;
+	struct DefNode *arr;
+	char *lasp;
+};

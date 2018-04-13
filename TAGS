@@ -1,0 +1,20 @@
+
+syntaxAnalyse.h,187
+typedef struct Rule{Rule5,60
+	char tag;6,81
+	char *each[each7,92
+	int count;8,108
+	char first[first9,120
+	char follow[follow10,137
+}Rule;Rule11,155
+Rule Rarray[Rarray13,163
+
+FollowSet.c,21
+void FollowSet(6,83
+
+FirstSet.c,60
+Rule *getRuleByTag(getRuleByTag3,28
+void FirstSet(14,167
+
+syntaxAnalyse.c,15
+int main(6,77
