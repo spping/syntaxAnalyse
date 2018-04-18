@@ -32,11 +32,30 @@ int main(int argc, char *argv[])
 		FirstSet(&Rarray[i]);
 		printf ("%s\n", Rarray[i].first);
 	}
+
 	char whTags[10] = {0};
 	for(int i = 0; i < 5; i ++){
 		FollowSet(Rarray[i], whTags);
+	}
+
+
+	printf ("whTags = %s\n", whTags);
+	for (char *p = whTags; *p != 0; ++ p) {
+		char delim[2] = {'@', *p} ;
+		for (int i = 0; i < 10; ++i) {
+			char cfollow[10];
+			strcpy(cfollow, Rarray[i].follow);
+			Rarray[i].follow[0] = 0;
+			char *c = strtok(cfollow, delim);
+			while (strcpy(Rarray[i].follow, c) && (c = strtok(NULL, delim) != NULL) )
+				;
+		}
+
+	}
+	for(int i = 0; i < 5; i ++){
 		printf ("%s\n", Rarray[i].follow);
 	}
-	printf ("whTags = %s\n", whTags);
+
+
 	return 0;
 }
