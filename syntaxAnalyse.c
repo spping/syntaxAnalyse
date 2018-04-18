@@ -1,7 +1,7 @@
 #include "syntaxAnalyse.h"
 
 void FirstSet(Rule *r);
-void FollowSet(Rule r);
+void FollowSet(Rule r, char *);
 
 int main(int argc, char *argv[])
 {
@@ -32,9 +32,11 @@ int main(int argc, char *argv[])
 		FirstSet(&Rarray[i]);
 		printf ("%s\n", Rarray[i].first);
 	}
+	char whTags[10] = {0};
 	for(int i = 0; i < 5; i ++){
-		FollowSet(Rarray[i]);
+		FollowSet(Rarray[i], whTags);
 		printf ("%s\n", Rarray[i].follow);
 	}
+	printf ("whTags = %s\n", whTags);
 	return 0;
 }
